@@ -15,7 +15,7 @@ tDay= str(NOW.day)
 if len(tDay) == 1:
     tDay = '0'+tDay
 
-MSG = tYear+'-'+tMonth+'-'+tDay+' '+'미세먼지'
+MSG = tYear+'-'+tMonth+'-'+tDay+' '+'미세먼지.'
 
 
 #Crawling
