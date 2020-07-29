@@ -23,8 +23,6 @@ options.headless = True #창을 띄우지 않음
 
 browser = webdriver.Chrome(executable_path=webDriverPath+'/chromedriver.exe', options=options)
 
-
-
 #file util
 def backUpAllFile(oldPath, newPath, timeStampAdd, isCopy):
     NOW = datetime.now()
@@ -63,8 +61,6 @@ def getSysdateAsStr(type):
     else:
         return str(NOW)
 
-
-
 #텍스트 파일에서 읽어오기
 if not os.path.exists(keyWordFile) :
     print('keyword file does not exists : ' + keyWordFile)
@@ -73,7 +69,6 @@ if not os.path.exists(keyWordFile) :
 keyWordList = []
 
 f = open(keyWordFile, 'r', encoding='utf-8')
-
 
 keyWordList = f.readlines()
 if len(keyWordList) > 0 :
@@ -132,8 +127,8 @@ if len(keyWordList) > 0 :
             ws.append([strItmNm, strPrc, strURL, strSpec])
 
     # 기존 파일 백업 - 이미 생성된 엑셀파일
-    # checkNCreateDir(prsnDir + '/output')
-    # checkNCreateDir(prsnDir + '/output/backup')
+    checkNCreateDir(prsnDir + '/output')
+    checkNCreateDir(prsnDir + '/output/backup')
     print(backUpAllFile(prsnDir+'/output', prsnDir+'/output/backup', 'Y', False))
 
     # 파일 쓰기
